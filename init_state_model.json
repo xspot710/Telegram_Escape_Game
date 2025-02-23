@@ -1,0 +1,65 @@
+{
+    "initialState": {
+        "id": "0",
+        "name": {
+            "zh": "起始房间"
+        },
+        "description": {
+            "zh": "你在一個上鎖的房間裡"
+        },
+        "possibleMoves": {
+            "zh": [
+            {"action": "左移", "nextState": "1"},
+            {"action": "右移", "nextState": "2"},
+            {"action": "观察", "nextState": "0"}
+            ]
+        }
+    },
+    "states": [
+    {
+        "id": "1",
+        "name": {
+          "zh": "左邊房間"
+        },
+        "description": {
+          "zh": "你向左移動。這裡有一個窗户。"
+        },
+        "possibleMoves": {
+          "zh": [
+            {"action": "觀察", "nextState": "1"},
+            {"action": "打開窗户", "nextState": "3"}
+          ]
+        }
+    },
+    {
+        "id": "2",
+        "name": {
+          "zh": "右邊房間"
+        },
+        "description": {
+          "zh": "你向右移動。這裡有一張桌子。"
+        },
+        "possibleMoves": {
+          "zh": [
+            {"action": "觀察", "nextState": "2"},
+            {"action": "搜索桌子", "nextState": "4"}
+          ]
+        }
+    },
+    {
+        "id": "3",
+        "name": {
+          "zh": "窗戶打開"
+        },
+        "description": {
+          "zh": "你把窗戶打開了"
+        },
+        "possibleMoves": {
+          "zh": [
+            {"action": "返回", "nextState": "1"}
+          ]
+        }
+    }
+    ]
+  }
+  

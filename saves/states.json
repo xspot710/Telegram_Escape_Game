@@ -1,0 +1,1007 @@
+[
+    {
+        "id": "0",
+        "locate": {
+            "zh": "房間"
+        },
+        "description": {
+            "zh": "你醒了過來，這是哪裡？你茫然地環顧四周，你並不知道你身在何處，趕快逃離這個陌生的房間吧！"
+        },
+        "image": "1.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "了解了！", "nextState": "1"}
+            ]
+        }
+    },
+    {
+        "id": "1",
+        "locate": {
+            "zh": "房間N"
+        },
+        "description": {
+            "zh": "牆上掛著富士山的畫，靠近天花板的地方有冷氣通風口，右邊的櫃子放著四個鬧鐘。"
+        },
+        "image": "1.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "向左轉。", "nextState": "2"},
+                {"action": "向右轉。", "nextState": "3"},
+                {"action": "向後轉。", "nextState": "4"},
+                {"action": "查看富士山的畫。", "nextState": "1_0"},
+                {"action": "查看冷氣通風口。", "nextState": "1_1"},
+                {"action": "查看右邊的櫃子。", "nextState": "1_2"}
+            ]
+        }
+    },
+    {
+        "id": "2",
+        "locate": {
+            "zh": "房間W"
+        },
+        "description": {
+            "zh": "門旁有個密碼鎖，檯面上有桌上型電話、一張紙條和筆記型電腦，左下方有一個小冰箱，右下方有一個抽屜跟大保險箱 。"
+        },
+        "image": "2.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "向左轉。", "nextState": "4"},
+                {"action": "向右轉。", "nextState": "1"},
+                {"action": "向後轉。", "nextState": "3"},
+                {"action": "查看密碼鎖。", "nextStateIfConditionTrue": "2_0_b", "nextStateIfConditionFalse":"2_0", "condition":{"state":"2_0_a", "conditionKey":"unlocked"}},
+                {"action": "查看桌上型電話。", "nextStateIfConditionTrue": "2_1_b_1", "nextStateIfConditionFalse": "2_1", "condition": {"state": "2_1_a", "conditionKey": "unlocked"}},
+                {"action": "查看紙條。", "nextState": "2_2"},
+                {"action": "查看電腦", "nextStateIfConditionTrue": "2_3_b_1", "nextStateIfConditionFalse": "2_3", "condition": {"state": "2_3_a", "conditionKey": "unlocked"}},
+                {"action": "查看小冰箱。", "nextState": "2_4"},
+                {"action": "查看抽屜。", "nextStateIfConditionTrue": "2_5_3", "nextStateIfConditionFalse": "2_5", "condition": {"state":"2_5_2", "conditionKey": "playerReach"}},
+                {"action": "查看大保險箱", "nextStateIfConditionTrue": "2_6_b_1", "nextStateIfConditionFalse": "2_6", "condition": {"state": "2_6_a", "conditionKey": "unlocked"}}
+            ]
+        }
+    },
+    {
+        "id": "3",
+        "locate": {
+            "zh": "房間E"
+        },
+        "description": {
+            "zh": "桌子上擺著一個音樂盒和一杯水，窗外是城市的夜景，左邊有個垃圾桶 。"
+        },
+        "image": "3.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "向左轉。", "nextState": "1"},
+                {"action": "向右轉。", "nextState": "4"},
+                {"action": "向後轉。", "nextState": "2"},
+                {"action": "查看音樂盒。", "nextStateIfConditionTrue": "3_0_d", "nextStateIfConditionFalse": "3_0", "condition": {"state":"3_0_d", "conditionKey": "playerReach"}},
+                {"action": "查看水。", "nextStateIfConditionTrue": "3_1_1", "nextStateIfConditionFalse": "3_1", "condition": {"state":"3_1_0", "conditionKey": "playerReach"}},
+                {"action": "查看夜景。", "nextState": "3_2"},
+                {"action": "查看垃圾桶。", "nextState": "3_3"}
+            ]
+        }
+    },
+    {
+        "id": "4",
+        "locate": {
+            "zh": "房間S"
+        },
+        "description": {
+            "zh": "正中間有一台直立鋼琴，譜架上面放著一本小說，左邊有一個書櫃 。"
+        },
+        "image": "4.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "向左轉。", "nextState": "3"},
+                {"action": "向右轉。", "nextState": "2"},
+                {"action": "向後轉。", "nextState": "1"},
+                {"action": "查看鋼琴。", "nextStateIfConditionTrue": "4_0_b_1", "nextStateIfConditionFalse": "4_0", "condition": {"state": "4_0_a", "conditionKey": "unlocked"}},
+                {"action": "查看小說。", "nextState": "4_1"},
+                {"action": "查看書櫃。", "nextState": "4_2"}
+            ]
+        }
+    },
+    {
+        "id": "1_0",
+        "locate": {
+            "zh": "富士山的畫"
+        },
+        "description": {
+            "zh": "嗯...這是富士山嗎？總覺得好像是小孩子的美術作品，但醜的很有風格。"
+        },
+        "image": "1_0.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "1"}
+            ]
+        }
+    },
+    {
+        "id": "1_1",
+        "locate": {
+            "zh": "冷氣通風口"
+        },
+        "description": {
+            "zh": "通風口裡黑壓壓的，可以感受到涼爽的風從縫隙中吹拂過來。"
+        },
+        "image": "1_1.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "1"}
+            ]
+        }
+    },
+    {
+        "id": "1_2",
+        "locate": {
+            "zh": "右邊的櫃子"
+        },
+        "description": {
+            "zh": "櫃子裡放著四個鬧鐘，其中兩個被貼上了錯誤標籤，仔細一看發現貼著錯誤標籤的鬧鐘指針是倒過來轉的，彷彿時間逆行。"
+        },
+        "image": "1_2.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "1"}
+            ]
+        }
+    },
+    {
+        "id": "2_0",
+        "locate": {
+            "zh": "門的密碼鎖"
+        },
+        "description": {
+            "zh": "控制著門的密碼鎖。"
+        },
+        "image": "2_0.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "輸入密碼", "nextState": "2_0_a"},
+                {"action": "返回", "nextState": "2"}
+            ]
+        }
+    },    
+    {
+        "id": "2_0_a",
+        "locate": {
+            "zh": "門的密碼鎖"
+        },
+        "description": {
+            "zh": "直接輸入密碼或是返回："
+        },
+        "image": "2_0.jpg",
+        "playersAttempts": 0,
+        "maxAttempts": 3,
+        "unlocked": false,
+        "password": "8317",
+        "unlockedState": "5_0",
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "2"}
+            ]
+        }
+    },
+    {
+        "id": "2_1",
+        "locate": {
+            "zh": "桌上型電話"
+        },
+        "description": {
+            "zh": "只能輸入兩個號碼的樣子。"
+        },
+        "image": "2_1.jpg",
+        "playersAttempts": 0,
+        "maxAttempts": 3,
+        "unlocked": false,
+        "possibleMoves": {
+            "zh": [
+                {"action": "撥打電話", "nextState": "2_1_a"}
+            ]
+        }
+    },
+    {
+        "id": "2_1_a",
+        "locate": {
+            "zh": "桌上型電話"
+        },
+        "description": {
+            "zh": "撥打電話:"
+        },
+        "image": "2_1.jpg",
+        "playersAttempts": 0,
+        "maxAttempts": 3,
+        "unlocked": false,
+        "password": "48",
+        "unlockedState": "2_1_b",
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "2"}
+            ]
+        }
+    },
+    {
+        "id": "2_1_b",
+        "locate": {
+            "zh": "桌上型電話"
+        },
+        "description": {
+            "zh": "上面顯示著「方塊3」，這是什麼意思呢？"
+        },
+        "image": "2_1_b.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "2"}
+            ]
+        }
+    },
+    {
+        "id": "2_1_b_1",
+        "locate": {
+            "zh": "桌上型電話"
+        },
+        "description": {
+            "zh": "上面顯示著「方塊3」，這是什麼意思呢？"
+        },
+        "image": "2_1_b.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "2"}
+            ]
+        }
+    },
+    {
+        "id": "2_2",
+        "locate": {
+            "zh": "紙條"
+        },
+        "description": {
+            "zh": "您好，如果有需要電話服務，請依照下列的指示尋找號碼：\n第一個號碼你需要進入寒冷的世界，在冰冷的寒意裡，食物不會是你的朋友。\n第二個號碼你需要進入知識的世界，但羅伊(Roy)、安娜(Anna)和伊娃(Eva)從沒寫過值得擺上書架的書，喔對、克里斯汀娜(Christina)也沒有。"
+        },
+        "image": "2_2.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "2"}
+            ]
+        }
+    },
+    {
+        "id": "2_3",
+        "locate": {
+            "zh": "電腦"
+        },
+        "description": {
+            "zh": "看來需要輸入4位密碼。"
+        },
+        "image": "2_3.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "輸入密碼", "nextState": "2_3_a"}
+            ]
+        }
+    },
+    {
+        "id": "2_3_a",
+        "locate": {
+            "zh": "電腦"
+        },
+        "description": {
+            "zh": "輸入密碼或是返回："
+        },
+        "image": "2_3.jpg",
+        "playersAttempts": 0,
+        "maxAttempts": 3,
+        "unlocked": false,
+        "password": "9022",
+        "unlockedState": "2_3_b",
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "2"}
+            ]
+        }
+    },
+    {
+        "id": "2_3_b",
+        "locate": {
+            "zh": "電腦"
+        },
+        "description": {
+            "zh": "螢幕上顯示「黑桃、方塊、梅花、愛心」，當中黑桃上還標示了「8」，這是什麼意思呢？"
+        },
+        "image": "2_3_b.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "2"}
+            ]
+        }
+    },
+    {
+        "id": "2_3_b_1",
+        "locate": {
+            "zh": "電腦"
+        },
+        "description": {
+            "zh": "螢幕上顯示「黑桃、方塊、梅花、愛心」，當中黑桃上還標示了「8」，這是什麼意思呢？"
+        },
+        "image": "2_3_b.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "2"}
+            ]
+        }
+    },
+    {
+        "id": "2_4",
+        "locate": {
+            "zh": "小冰箱"
+        },
+        "description": {
+            "zh": "裡面塞得滿滿的，有各式飲料、酒水、三明治、沙拉跟蛋糕捲。"
+        },
+        "image": "2_4.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "查看蛋糕", "nextState": "2_4_a"},
+                {"action": "查看沙拉", "nextStateIfConditionTrue": "2_4_b_1", "nextStateIfConditionFalse": "2_4_b", "condition": {"state":"2_4_b_0", "conditionKey": "playerReach"}},
+                {"action": "返回", "nextState": "2"}
+            ]
+        }
+    },
+    {
+        "id": "2_4_a",
+        "locate": {
+            "zh": "小冰箱的蛋糕"
+        },
+        "description": {
+            "zh": "蛋糕看起來非常的美味，草莓閃耀著光澤，鮮奶油誘惑著你的靈魂。"
+        },
+        "image": "2_4.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "吃蛋糕", "nextState": "2_4_a_0"},
+                {"action": "返回", "nextState": "2_4"}
+            ]
+        }
+    },
+    {
+        "id": "2_4_a_0",
+        "locate": {
+            "zh": "小冰箱的蛋糕"
+        },
+        "description": {
+            "zh": "盒子被牢牢的黏在冰箱的層架上，你用盡力氣也拔不起來，這時你定睛一看才發現蛋糕只是個假的模型。"
+        },
+        "image": "2_4.jpg",
+        "Achievement": "The cake is a lie!",
+        "playerReach": 0,
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "2_4"}
+            ]
+        }
+    },
+    {
+        "id": "2_4_b",
+        "locate": {
+            "zh": "小冰箱的沙拉"
+        },
+        "description": {
+            "zh": "沙拉的葉子非常的新鮮，旁邊的葉子十分的翠綠，打底的葉子彷彿在朝著你揮手就要你吃了它，等等、這沙拉裡只有葉子嗎？還有兩片柳...喔等等，那只是塑膠裝飾物。"
+        },
+        "image": "2_4.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "吃沙拉葉", "nextState": "2_4_b_0"},
+                {"action": "返回", "nextState": "2_4"}
+            ]
+        }
+    },
+    {
+        "id": "2_4_b_0",
+        "locate": {
+            "zh": "小冰箱的沙拉"
+        },
+        "description": {
+            "zh": "葉子非常的美味，美味到你無法相信這是一片葉子能帶來給你的，你彷彿身心靈都受到了淨化，疲勞也消失無蹤，大家要記得多吃蔬菜唷！"
+        },
+        "image": "2_4.jpg",
+        "playerReach": 0,
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "2_4"}
+            ]
+        }
+    },
+    {
+        "id": "2_4_b_1",
+        "locate": {
+            "zh": "小冰箱的沙拉"
+        },
+        "description": {
+            "zh": "你回憶起葉子的美味，再一次感嘆它帶來給你的身心靈都受到了淨化的感覺，疲勞也消失無蹤，大家要記得多吃蔬菜唷！"
+        },
+        "image": "2_4.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "2_4"}
+            ]
+        }
+    },
+    {
+        "id": "2_5",
+        "locate": {
+            "zh": "抽屜"
+        },
+        "description": {
+            "zh": "你試著拉了拉，發現抽屜絲毫不動。"
+        },
+        "image": "2.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "繼續拉", "nextState": "2_5_0"},
+                {"action": "返回", "nextState": "2"}
+            ]
+        }
+    },
+    {
+        "id": "2_5_0",
+        "locate": {
+            "zh": "抽屜"
+        },
+        "description": {
+            "zh": "你又更用力的拉了拉，抽屜還是絲毫不動，你懷疑這是不是個假抽屜。"
+        },
+        "image": "2.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "繼續拉", "nextState": "2_5_1"},
+                {"action": "返回", "nextState": "2"}
+            ]
+        }
+    },
+    {
+        "id": "2_5_1",
+        "locate": {
+            "zh": "抽屜"
+        },
+        "description": {
+            "zh": "你用盡吃奶的力氣奮力一拉，抽屜還是絲毫不動，你彷彿覺得抽屜裡有個小精靈在跟你拔河。"
+        },
+        "image": "2.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "繼續拉", "nextState": "2_5_2"},
+                {"action": "返回", "nextState": "2"}
+            ]
+        }
+    },
+    {
+        "id": "2_5_2",
+        "locate": {
+            "zh": "抽屜"
+        },
+        "description": {
+            "zh": "你的體力所剩無幾，你用最後的力氣輕輕一拉，沒想到抽屜就這麼打了開來，裡面只有一張紙條，你把它拿了起來，上面寫著「特別感謝名單」，這是什麼意思？"
+        },
+        "image": "2_5.jpg",
+        "Achievement": "堅持毅力",
+        "playerReach": 0,
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "2"}
+            ]
+        }
+    },
+    {
+        "id": "2_5_3",
+        "locate": {
+            "zh": "抽屜"
+        },
+        "description": {
+            "zh": "抽屜就這麼打了開來，裡面只有一張紙條，上面寫著「特別感謝名單」。"
+        },
+        "image": "2_5.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "2"}
+            ]
+        }
+    },
+    { 
+        "id": "2_6",
+        "locate": {
+            "zh": "大保險箱"
+        },
+        "description": {
+            "zh": "看來需要輸入5位密碼。"
+        },
+        "image": "2_6.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "輸入密碼", "nextState": "2_6_a"},
+                {"action": "返回", "nextState": "2"}
+            ]
+        }
+    },
+    {
+        "id": "2_6_a",
+        "locate": {
+            "zh": "大保險箱"
+        },
+        "description": {
+            "zh": "輸入密碼或是返回："
+        },
+        "image": "2_6.jpg",
+        "playersAttempts": 0,
+        "maxAttempts": 3,
+        "unlocked": false,
+        "password": "NIGHT",
+        "unlockedState": "2_6_b",
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "2"}
+            ]
+        }
+    },
+    {
+        "id": "2_6_b",
+        "locate": {
+            "zh": "大保險箱"
+        },
+        "description": {
+            "zh": "大保險箱裡面還有一個小保險箱？這是誰的惡趣味？上面雕著一隻惡龍的圖樣，看來需要輸入3位密碼。"
+        },
+        "image": "2_6_b.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "輸入密碼", "nextState": "2_6_b_1"},
+                {"action": "返回", "nextState": "2"}
+            ]
+        }
+    },    
+    {
+        "id": "2_6_b_1",
+        "locate": {
+            "zh": "大保險箱"
+        },
+        "description": {
+            "zh": "大保險箱裡面還有一個雕著一隻惡龍的圖樣的小保險箱"
+        },
+        "image": "2_6_b.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "查看小保險箱。", "nextStateIfConditionTrue": "2_7_b", "nextStateIfConditionFalse":"2_7", "condition":{"state":"2_7", "conditionKey":"unlocked"}},
+                {"action": "返回", "nextState": "2"}
+            ]
+        }
+    },
+    {
+        "id": "2_7",
+        "locate": {
+            "zh": "小保險箱"
+        },
+        "description": {
+            "zh": "大保險箱裡面還有一個雕著一隻惡龍的圖樣的小保險箱，直接輸入3位密碼或返回："
+        },
+        "image": "2_6_b.jpg",
+        "playersAttempts": 0,
+        "maxAttempts": 3,
+        "unlocked": false,
+        "password": "261",
+        "unlockedState": "2_7_a",
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "2"}
+            ]
+        }
+    },
+    {
+        "id": "2_7_a",
+        "locate": {
+            "zh": "小保險箱"
+        },
+        "description": {
+            "zh": "你成功打開了小保險箱，所幸沒有更多的保險箱了，你在裡面發現了一些東西，由左至右分別是「一個打火機，上面刻著數字2」、「一個有兩棵樹的雪花球，上面寫著數字0」和「一張梅花A」，這些是什麼意思？"
+        },
+        "image": "2_7.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "2"}
+            ]
+        }
+    },
+    {
+        "id": "2_7_b",
+        "locate": {
+            "zh": "小保險箱"
+        },
+        "description": {
+            "zh": "成功打開的小保險箱有一些東西，由左至右分別是「一個打火機，上面刻著數字2」、「一個有兩棵樹的雪花球，上面寫著數字0」和「一張梅花A」，這些是什麼意思？"
+        },
+        "image": "2_7.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "2"}
+            ]
+        }
+    },
+    {
+        "id": "3_0",
+        "locate": {
+            "zh": "音樂盒"
+        },
+        "description": {
+            "zh": "這是個造型別緻的音樂盒，旁邊插著一根發條，側面雕刻著樂譜。"
+        },
+        "image": "3_0.jpg",
+
+        "possibleMoves": {
+            "zh": [
+                {"action": "順時針旋轉發條", "nextState": "3_0_a"},
+                {"action": "逆時針旋轉發條", "nextState": "3_0_0"},
+                {"action": "返回", "nextState": "3"}
+            ]
+        }
+    },
+    {
+        "id": "3_0_a",
+        "locate": {
+            "zh": "音樂盒"
+        },
+        "description": {
+            "zh": "音樂盒沒有反應。"
+        },
+        "image": "3_0.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "順時針旋轉發條", "nextState": "3_0_0"},
+                {"action": "逆時針旋轉發條", "nextState": "3_0_b"},
+                {"action": "返回", "nextState": "3"}
+            ]
+        }
+    },
+    {
+        "id": "3_0_b",
+        "locate": {
+            "zh": "音樂盒"
+        },
+        "description": {
+            "zh": "音樂盒沒有反應。"
+        },
+        "image": "3_0.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "順時針旋轉發條", "nextState": "3_0_0"},
+                {"action": "逆時針旋轉發條", "nextState": "3_0_c"},
+                {"action": "返回", "nextState": "3"}
+            ]
+        }
+    },
+    {
+        "id": "3_0_c",
+        "locate": {
+            "zh": "音樂盒"
+        },
+        "description": {
+            "zh": "音樂盒沒有反應。"
+        },
+        "image": "3_0.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "順時針旋轉發條", "nextState": "3_0_d"},
+                {"action": "逆時針旋轉發條", "nextState": "3_0_0"},
+                {"action": "返回", "nextState": "3"}
+            ]
+        }
+    },
+    {
+        "id": "3_0_d",
+        "locate": {
+            "zh": "音樂盒"
+        },
+        "description": {
+            "zh": "音樂盒響起了美妙的音樂，Mi Re Do Si La So La Si ~，你認出了這是卡農的旋律，音樂真是撫慰人心。"
+        },
+        "image": "3_0.jpg",
+        "playerReach": 0,
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "3"}
+            ]
+        }
+    },
+    {
+        "id": "3_0_0",
+        "locate": {
+            "zh": "音樂盒"
+        },
+        "description": {
+            "zh": "音樂盒沒有反應。"
+        },
+        "image": "3_0.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "順時針旋轉發條", "nextState": "3_0_0"},
+                {"action": "逆時針旋轉發條", "nextState": "3_0_0"},
+                {"action": "返回", "nextState": "3"}
+            ]
+        }
+    },
+    {
+        "id": "3_1",
+        "locate": {
+            "zh": "水"
+        },
+        "description": {
+            "zh": "別看了，要喝嗎？"
+        },
+        "image": "3.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "喝水", "nextState": "3_1_0"},
+                {"action": "返回", "nextState": "3"}
+            ]
+        }
+    },
+    {
+        "id": "3_1_0",
+        "locate": {
+            "zh": "水"
+        },
+        "description": {
+            "zh": "咕嚕咕嚕，你喝了一大口水，突然才意識到自己好久沒喝水了，被困在房間的時候也不要忘記補充水分喔！"
+        },
+        "image": "3.jpg",
+        "playerReach": 0,
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "3"}
+            ]
+        }
+    },
+    {
+        "id": "3_1_1",
+        "locate": {
+            "zh": "喝完的水"
+        },
+        "description": {
+            "zh": "水喝完了，快點想辦法逃出房間吧。"
+        },
+        "image": "3.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "3"}
+            ]
+        }
+    },
+    {
+        "id": "3_2",
+        "locate": {
+            "zh": "夜景"
+        },
+        "description": {
+            "zh": "窗戶找不到任何可以打開的地方，但窗外的夜景非常美麗，幾乎讓你忘記當下的困境。"
+        },
+        "image": "3_2.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "3"}
+            ]
+        }
+    },
+    {
+        "id": "3_3",
+        "locate": {
+            "zh": "垃圾桶"
+        },
+        "description": {
+            "zh": "好滿好滿的垃圾桶。"
+        },
+        "image": "3.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "把手伸進去", "nextState": "3_3_0"},
+                {"action": "返回", "nextState": "3"}
+            ]
+        }
+    },
+    {
+        "id": "3_3_0",
+        "locate": {
+            "zh": "垃圾桶"
+        },
+        "description": {
+            "zh": "你遲疑了一下，看著垃圾桶裡面滿滿的衛生紙團，你真的要這麼做嗎？"
+        },
+        "image": "3.jpg",
+        "playerReach": 0,
+        "possibleMoves": {
+            "zh": [
+                {"action": "把手伸進去", "nextState": "3_3_1"},
+                {"action": "返回", "nextState": "3"}
+            ]
+        }
+    },
+    {
+        "id": "3_3_1",
+        "locate": {
+            "zh": "垃圾桶"
+        },
+        "description": {
+            "zh": "你翻找了片刻，除了衛生紙團還是衛生紙團，沒有發現任何有用的物品，但所幸沒有沾上什麼奇怪的東西，你覺得勇於嘗試的自己實在是太厲害了。"
+        },
+        "image": "3.jpg",
+        "playerReach": 0,
+        "Achievement": "無所畏懼",
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "3"}
+            ]
+        }
+    },
+    {
+        "id": "4_0", 
+        "locate": {
+            "zh": "鋼琴"
+        },
+        "description": {
+            "zh": "要彈奏一曲嗎？"
+        },
+        "image": "4_0.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "彈奏鋼琴：", "nextState": "4_0_a"},
+                {"action": "返回", "nextState": "4"}
+            ]
+        }
+    },    
+    {
+        "id": "4_0_a",
+        "locate": {
+            "zh": "鋼琴"
+        },
+        "description": {
+            "zh": "彈奏一曲:"
+        },
+        "image": "4_0.jpg",
+        "playersAttempts": 0,
+        "maxAttempts": 3,
+        "unlocked": false,
+        "password": "32176567",
+        "unlockedState": "4_0_b",
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "4"}
+            ]
+        }
+    },    
+    {
+        "id": "4_0_b",
+        "locate": {
+            "zh": "鋼琴"
+        },
+        "description": {
+            "zh": "你沉浸在樂聲中，回過神來發現一旁的地上不知道什麼時候出現了奇怪的東西，分別是「一張愛心7」和「一張被撕下的書頁」"
+        },
+        "image": "4_0_b.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "4"}
+            ]
+        }
+    },      
+    {
+        "id": "4_0_b_1",
+        "locate": {
+            "zh": "鋼琴"
+        },
+        "description": {
+            "zh": "一旁的地上有奇怪的東西，分別是「一張愛心7」和「一張被撕下的書頁」"
+        },
+        "image": "4_0_b.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "4"}
+            ]
+        }
+    },
+    {
+        "id": "4_1",
+        "locate": {
+            "zh": "小說"
+        },
+        "description": {
+            "zh": "《法師鬥惡龍》的簡介寫著一個精靈魔法師和伙伴們一同冒險的故事。"
+        },
+        "image": "4_1.jpg",
+        "playersAttempts": 0,
+        "maxAttempts": "inf",
+        "unlocked": false,
+        "password": 255,
+        "possibleMoves": {
+            "zh": [
+                {"action": "書好厚呢，要翻到第幾頁呢？", "nextStateIfConditionTrue": "4_1_a", "nextStateIfConditionFalse": "4_1_b", "condition": {"state":"4_1", "conditionKey": "unlocked"}},
+                {"action": "返回", "nextState": "4"}
+            ]
+        }
+    },
+    {
+        "id": "4_1_a",
+        "locate": {
+            "zh": "小說"
+        },
+        "description": {
+            "zh": "你翻到了被撕下頁碼的那頁，那頁還有一個段落被圈了起來，上面寫著：\n惡龍被成功削弱了！魔法師芙莉熊喘著氣但眼神堅毅，現在就是最好的時機了。\n也是時候該使用那招了。\n魔法師芙莉熊舉起魔杖高聲吟唱：「飄渺的雲霞阿，賜予我力量，閃耀的群星阿，賜予我力量，潔白的月輪阿，賜予我力量。」\n五彩的流光從四面八方湧向魔杖的尖端，耀眼奪目的光越來越亮，在場的眾人或瞇上眼睛或舉手遮擋，但都無法完全掩蓋這毀天滅地的光芒。\n「湮滅術！」\n魔法師芙莉熊大吼道，無法抑制的龐大魔力自魔杖噴湧而出，朝著無法動彈的惡龍轟射而去，惡龍連吼叫都做不到，它只能眼睜睜的看著代表死亡的能量將它整個的身軀轟成碎片，最後化為灰燼，在光中消散而去，彷彿不曾存在。"
+        },
+        "image": "4_1_a.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "4"}
+            ]
+        }
+    },
+    {
+        "id": "4_1_b",
+        "locate": {
+            "zh": "小說"
+        },
+        "description": {
+            "zh": "你沉浸在書中的故事裡，回過神來才發現已經過去了十多分鐘，糟糕現在可不是能浪費時間的時候，你沒發現什麼有用的東西，你決定再去找找線索。"
+        },
+        "image": "4_1.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "4"}
+            ]
+        }
+    },
+    {
+        "id": "4_2",
+        "locate": {
+            "zh": "書櫃"
+        },
+        "description": {
+            "zh": "上面放滿了外文書。"
+        },
+        "image": "4_2.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "來看書嘍！", "nextState": "4_2_0"},
+                {"action": "返回", "nextState": "4"}
+            ]
+        }
+    },
+    {
+        "id": "4_2_0",
+        "locate": {
+            "zh": "書櫃"
+        },
+        "description": {
+            "zh": "你隨意拿了一本書起來，翻開發現裡面居然一片空白，你又翻了翻其他本，發現這些書裡居然一個字都沒有，那是什麼人為了什麼理由把他放在這裡的呢？又或者是這其實是個虛擬實境，本區域的建模尚未完成？"
+        },
+        "image": "4_2.jpg",
+        "playerReach": 0,
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "4"}
+            ]
+        }
+    },
+    {
+        "id": "5_0",
+        "locate": {
+            "zh": "OPEN"
+        },
+        "description": {
+            "zh": "恭喜你成功解開了密碼，成功逃脫！也希望你玩得盡興！"
+        },
+        "image": "5_0.jpg",
+        "possibleMoves": {
+            "zh": [
+                {"action": "返回", "nextState": "5_0"}
+            ]
+        }
+    },
+    {
+        "id": "init",
+        "current_state": "0"
+    }
+]
